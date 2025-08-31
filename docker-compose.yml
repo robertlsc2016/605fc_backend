@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  backend_605fc:
+    build: .
+    container_name: 605fc_backend
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/605fc_db
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  mongo_605fc:
+    image: mongo:7
+    container_name: 605fc_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
