@@ -13,14 +13,13 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+#   mongo_605fc:
+#     image: mongo:7
+#     container_name: mongo_605fc
+#     ports:
+#       - "${MONGO_PORT}:${MONGO_PORT}"
+#     volumes:
+#       - mongo-data:/data/db
 
-  mongo_605fc:
-    image: mongo:7
-    container_name: mongo_605fc
-    ports:
-      - "${MONGO_PORT}:${MONGO_PORT}"
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:
+# volumes:
+#   mongo-data:
