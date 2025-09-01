@@ -6,8 +6,8 @@ services:
     container_name: backend_605fc
     ports:
       - "${API_PORT}:${API_PORT}"
-    environment:
-      - MONGO_URI=${MONGO_URI}
+    # environment:
+    #   - MONGO_URI=${MONGO_URI}
     # depends_on:
     #   - mongo_605fc
     volumes:
