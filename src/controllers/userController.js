@@ -9,6 +9,16 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+exports.helloWorld = async (req, res) => {
+  try {
+    res
+      .status(200)
+      .json({ message: "Hello World! API is running", status: 200 });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 exports.getPlayerByNickname = async (req, res) => {
   try {
     const user = await User.find({ nickname: req.params.nickname });
