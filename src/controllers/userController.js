@@ -55,6 +55,7 @@ exports.addHistoryToAllUsers = async (req, res) => {
         goals: u.goals,
         assists: u.assists,
         errors: u.errors,
+        presence: u.presence
       };
 
       if (historyIndex > -1) {
@@ -70,6 +71,7 @@ exports.addHistoryToAllUsers = async (req, res) => {
       user.assists = user.history.reduce((sum, h) => sum + h.assists, 0);
       user.errors = user.history.reduce((sum, h) => sum + h.errors, 0);
 
+      
       await user.save();
     }
 

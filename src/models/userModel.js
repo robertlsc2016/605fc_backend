@@ -63,6 +63,10 @@ const userSchema = new mongoose.Schema(
             default: 0,
             min: [0, "Erros não podem ser negativos"],
           },
+          presence: {
+            type: Boolean,
+            default: false,
+          },
         },
       ],
       default: [], // 👈 garante que o histórico inicial seja um array vazio
